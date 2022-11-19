@@ -1,0 +1,27 @@
+{
+    "root": true,
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "requireConfigFile": false,
+        "babelOptions": {
+            "babelrc": false,
+            "configFile": false,
+            "presets": ["@babel/preset-env"]
+        }
+    },
+    "env": {
+        "node": true,
+        "es6": true
+    },
+    "plugins": ["@babel"],
+    "extends": ["eslint:recommended"],
+    "rules": {
+        "quotes": ["error", "double"],
+        "semi": "error",
+        "no-trailing-spaces": "error",
+        "no-var": "error",
+        "no-console": "warn",
+        "eqeqeq": "error",
+        "linebreak-style": ["error", "unix"]
+    }
+}
