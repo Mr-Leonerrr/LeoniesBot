@@ -9,7 +9,6 @@ on:
       - '!gh-pages'
   pull_request:
     branches:
-      - '**'
       - 'staging'
       - '!docs'
       - '!master'
