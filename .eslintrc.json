@@ -20,7 +20,6 @@
         "semi": "error",
         "no-trailing-spaces": "error",
         "no-var": "error",
-        "no-console": "warn",
         "eqeqeq": "error",
         "linebreak-style": ["error", "unix"]
     }

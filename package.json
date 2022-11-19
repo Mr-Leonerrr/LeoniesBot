@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "deploy": "node ./src/deploy.js",
+        "deploy": "node ./src/functions/deploy-commands.js",
         "dev": "nodemon index.js",
         "lint": "eslint src --ext .js"
     },
@@ -34,6 +34,7 @@
     "dependencies": {
         "@discordjs/builders": "^1.3.0",
         "@discordjs/rest": "^1.3.0",
+        "colors": "^1.4.0",
         "discord-api-types": "^0.37.18",
         "discord.js": "^14.6.0",
         "fs": "^0.0.1-security",
