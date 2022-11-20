@@ -1,13 +1,41 @@
 "use strict";
 
+/**
+ * @file Various utility functions for uptime/math etc.
+ * @author Leonardo Natera
+ * @since 1.0.0
+ * @version 1.0.0
+ */
+
 const fs = require("fs");
 const path = require("path");
+
+const { PermissionsBitField, PermissionFlagsBits } = require("discord.js");
 
 /**
  * Storing the bots color palette
  */
 module.exports.colorPalette = {
     brandingColor: 475478
+};
+
+/**
+ * Asynchronous timeout
+ * @param {Number} time
+ * @returns {Promise<unknown>}
+ */
+module.exports.wait = (time) => {
+    return new Promise((res) => setTimeout(res, time).unref());
+};
+
+/**
+ * Get the permissions label of required command permissions.
+ * @param {PermissionsBitField[]} permissions
+ * @returns {String}
+ */
+module.exports.getPermissionsLabel = (permissions) => {
+    const flags = permissions.map((permission) => Object.keys(PermissionFlagsBits).find(key => PermissionFlagsBits[key] === permission)).join(", ");
+    return flags;
 };
 
 /**

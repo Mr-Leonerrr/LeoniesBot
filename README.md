@@ -23,7 +23,7 @@ Nothing can go wrong with someone like Leonies, what are you waiting for?
 
 # 💻 Local Setup
 
-> 1. Download && Install
+> 1. Download & Install
 ```
 $ git clone git@github.com:Mr-Leonerrr/leoniesbot.git
 $ cd leoniesbot
@@ -34,8 +34,8 @@ $ npm start
 - rename `example.env` to `.env`
 - fill out `BOT_TOKEN`, `CLIENT_ID`, `GUILD_ID`
 
-`Controller/owners.json`
-owner IDs, channel ID (for master logger)
+`util/config.json`
+owner IDs, prefix, discord invite link
 
 > 3. Starting the Bot
 ```

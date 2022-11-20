@@ -1,5 +1,12 @@
 "use strict";
 
+/**
+ * @file File that contains the ready event.
+ * @author Leonardo Natera
+ * @since 1.0.0
+ * @version 1.0.0
+ */
+
 const client = require("../util/bot");
 const { green, yellow, cyan } = require("colors/safe");
 const { ActivityType } = require("discord.js");
@@ -36,7 +43,7 @@ module.exports.run = async () => {
     console.log("");
     console.log(
         yellow(
-            "               + ================================================================================== +"
+            "               + ================================Commands========================================== +"
         )
     );
     console.log(
@@ -51,34 +58,41 @@ module.exports.run = async () => {
     );
     console.log(
         yellow(
-            "               + ================================Commands========================================== +"
+            "               + ================================Info========================================== +"
         )
     );
     console.log(
         cyan(
-            "                       Author   [i] :: By [Leoner#1604]    :: © 2022 Development                   "
+            "                       Author   [i] :: By [Leoner#1604]     :: © 2022 Development                   "
         )
     );
     console.log(
         cyan(
-            "                       Bot info [i] :: Status                       :: ✅ Online                           "
+            "                       Bot info [i] :: Status               :: ✅ Online                           "
         )
     );
     console.log(
         cyan(
-            `                       Users    [i] ::                              :: ${client.users.cache.size}  Users   `
+            `                       Users    [i] ::                      :: ${client.users.cache.size}  Users   `
         )
     );
     console.log(
         cyan(
-            `                       Guilds   [i] ::                              :: ${client.guilds.cache.size} Guilds  `
+            `                       Guilds   [i] ::                      :: ${client.guilds.cache.size} Guilds  `
+        )
+    );
+    console.log(
+        cyan(
+            `                       Count    [i] ::                      :: ${client.commands.size} Commands  `
         )
     );
     console.log(
         yellow(
-            "               + ================================Website=========================================== +"
+            "               + ================================================================================== +"
         )
     );
+
+    console.log("");
 
     console.log("Press [CTRL + C] to stop the Terminal ...");
 };

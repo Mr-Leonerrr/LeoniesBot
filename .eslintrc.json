@@ -16,11 +16,12 @@
     "plugins": ["@babel"],
     "extends": ["eslint:recommended"],
     "rules": {
+        "no-unused-vars": "off",
         "quotes": ["error", "double"],
         "semi": "error",
         "no-trailing-spaces": "error",
         "no-var": "error",
         "eqeqeq": "error",
-        "linebreak-style": ["error", "unix"]
+        "linebreak-style": ["warn", "unix"]
     }
 }
