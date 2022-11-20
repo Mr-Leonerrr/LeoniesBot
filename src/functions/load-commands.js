@@ -1,27 +1,30 @@
 "use strict";
 
-const path = require("path");
+/**
+ * @file File that load all commands to the client.
+ * @author Leonardo Natera
+ * @since 1.0.0
+ * @version 1.0.0
+ */
 
-// Configs
+const fs = require("fs");
+const { cyan, green, red, yellow } = require("colors/safe");
 const client = require("../util/bot");
-const { getAllFiles } = require("../util/util.js");
-const { cyan, green, red } = require("colors/safe");
 
 /* Load commands. */
 console.log(cyan("Loading Commands . . ."));
 /* Get an array of all files in the commands folder. */
-const commands = getAllFiles(path.join(__dirname, "../commands"));
-if (commands.length <= 0) {
+const directories = fs.readdirSync("./src/commands/");
+if (directories.length <= 0) {
     console.log(red("NO COMMANDS FOUND"));
 } else {
-    /* Iterate every file in the array and require it. Also map it to the commands collection. */
-    commands.forEach((file, i) => {
-        const props = require(`${file}`);
-        console.log(
-            green(
-                `${++i}. Command: ${file.split("\\").pop().split("/").pop()} loaded!`
-            )
-        );
-        client.commands.set(props.data.name, props);
-    });
+    console.log(cyan(`Loading a total of ${directories.length} categories.`));
+    for (const dir of directories) {
+        console.log(yellow(`+ ========== LOADING COMMANDS FROM [${dir.toLocaleUpperCase()}] ========== +`));
+        const commands = fs.readdirSync("./src/commands/" + dir + "/");
+        for (const cmd1 of commands.filter((cmd) => cmd.split(".").pop() === "js")) {
+            const response = client.loadCommand("./commands/" + dir, cmd1);
+            response ? console.log(red(response)) : console.log(green(`Command [i] :: ${cmd1}         :: ✅ Loaded`));
+        }
+    }
 }
