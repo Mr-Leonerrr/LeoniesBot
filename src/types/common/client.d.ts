@@ -1,7 +1,6 @@
-import { Command } from './interactions';
+import { CommandInterface } from './interactions';
 import { Client, Collection } from 'discord.js';
 import { Config } from './config';
-import ConfigJson from '../../util/config.json';
 
 /**
  * Interface for the Leonies client.
@@ -9,8 +8,8 @@ import ConfigJson from '../../util/config.json';
  * @interface
  */
 export interface Leonies extends Client {
-    readonly config: Config = ConfigJson;
-    commands: Collection<string, Command>;
-    invite: string = ConfigJson.discord;
+    readonly config: Config;
+    commands: Collection<string, CommandInterface>;
+    invite: string;
     init: () => void | Promise<void>;
 }
