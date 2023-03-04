@@ -1,3 +1,3 @@
-"use strict";
+'use strict';
 
-require("./src/util/bot.js");
+require('./src/util/bot.js');

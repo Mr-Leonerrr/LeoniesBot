@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * @file File that contains the Command class used to create commands.
@@ -7,8 +7,8 @@
  * @version 1.0.0
  */
 
-const { CommandInteraction } = require("discord.js");
-const client = require("../util/bot");
+const { CommandInteraction } = require('discord.js');
+const client = require('../util/bot');
 
 /**
  * Base class for commands.

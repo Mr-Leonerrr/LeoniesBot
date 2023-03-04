@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * @file Various utility functions for uptime/math etc.
@@ -7,10 +7,10 @@
  * @version 1.0.0
  */
 
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
-const { PermissionsBitField, PermissionFlagsBits } = require("discord.js");
+const { PermissionsBitField, PermissionFlagsBits } = require('discord.js');
 
 /**
  * Storing the bots color palette
@@ -34,7 +34,7 @@ module.exports.wait = (time) => {
  * @returns {String}
  */
 module.exports.getPermissionsLabel = (permissions) => {
-    const flags = permissions.map((permission) => Object.keys(PermissionFlagsBits).find(key => PermissionFlagsBits[key] === permission)).join(", ");
+    const flags = permissions.map((permission) => Object.keys(PermissionFlagsBits).find(key => PermissionFlagsBits[key] === permission)).join(', ');
     return flags;
 };
 
@@ -49,9 +49,9 @@ module.exports.getAllFiles = function getAllFiles(dirPath, arrayOfFiles) {
 
     arrayOfFiles = arrayOfFiles || [];
     files.forEach((file) => {
-        if (fs.statSync(dirPath + "/" + file).isDirectory())
-            arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles);
-        else arrayOfFiles.push(path.join(dirPath, "/", file));
+        if (fs.statSync(dirPath + '/' + file).isDirectory())
+            arrayOfFiles = getAllFiles(dirPath + '/' + file, arrayOfFiles);
+        else arrayOfFiles.push(path.join(dirPath, '/', file));
     });
 
     return arrayOfFiles;
@@ -75,7 +75,7 @@ module.exports.getKeyByValue = (object, value) => {
 module.exports.msToMinAndSec = (ms) => {
     let minutes = Math.floor(ms / 60000);
     let seconds = ((ms % 60000) / 1000).toFixed(0);
-    return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+    return minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
 };
 
 /**

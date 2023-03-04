@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * @file File that contains the interactionCreate event.
@@ -7,13 +7,13 @@
  * @version 1.0.0
  */
 
-const { CommandInteraction, EmbedBuilder } = require("discord.js");
-const Command = require("../structures/Command");
-const client = require("../util/bot");
-const { getPermissionsLabel } = require("../util/util");
+const { CommandInteraction, EmbedBuilder } = require('discord.js');
+const Command = require('../structures/Command');
+const client = require('../util/bot');
+const { getPermissionsLabel } = require('../util/util');
 
 module.exports.data = {
-    name: "interactionCreate"
+    name: 'interactionCreate'
 };
 
 /**
@@ -26,23 +26,23 @@ module.exports.run = async (interaction) => {
         const command = client.commands.get(interaction.commandName);
 
         if (!command) {
-            return interaction.reply({ content: "Command not found.", ephemeral: true });
+            return interaction.reply({ content: 'Command not found.', ephemeral: true });
         }
 
         if (command?.config?.disabled) {
             return await interaction.reply({
-                content: "The command is currently disabled due to technical limitations!",
+                content: 'The command is currently disabled due to technical limitations!',
                 ephemeral: true,
             });
         }
 
         const EmbedPermissions = new EmbedBuilder()
-            .setTitle(":stop_sign: Missing Permissions!")
+            .setTitle(':stop_sign: Missing Permissions!')
             .setFooter({
-                text: "Thank you for using me in your server!",
+                text: 'Thank you for using me in your server!',
                 iconURL: client.user.avatarURL(),
             })
-            .setColor("Red")
+            .setColor('Red')
             .setTimestamp();
 
         interaction.member = interaction.guild.members.cache.get(interaction.user.id);

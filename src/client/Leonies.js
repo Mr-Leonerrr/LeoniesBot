@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * @file File that defines the client of the bot.
@@ -7,9 +7,9 @@
  * @version 1.0.0
  */
 
-require("dotenv").config();
-const path = require("path");
-const { Client, Collection } = require("discord.js");
+require('dotenv').config();
+const path = require('path');
+const { Client, Collection } = require('discord.js');
 
 /**
  * The main client class.
@@ -25,7 +25,7 @@ class Leonies extends Client {
      */
     constructor(options) {
         super(options);
-        this.config = require("../util/config.json");
+        this.config = require('../util/config.json');
         this.commands = new Collection();
         this.invite = this.config.discord;
     }
@@ -33,8 +33,8 @@ class Leonies extends Client {
     async init() {
         this.login(process.env.BOT_TOKEN).then(() => this.isReady());
 
-        require("../functions/load-commands");
-        require("../functions/load-events");
+        require('../functions/load-commands');
+        require('../functions/load-events');
     }
 
     /**

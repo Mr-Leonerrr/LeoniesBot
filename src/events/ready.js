@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * @file File that contains the ready event.
@@ -7,12 +7,12 @@
  * @version 1.0.0
  */
 
-const client = require("../util/bot");
-const { green, yellow, cyan } = require("colors/safe");
-const { ActivityType } = require("discord.js");
+const client = require('../util/bot');
+const { green, yellow, cyan } = require('colors/safe');
+const { ActivityType } = require('discord.js');
 
 module.exports.data = {
-    name: "ready",
+    name: 'ready',
     once: true
 };
 
@@ -31,19 +31,19 @@ module.exports.run = async () => {
                 name: activities[index],
                 type: ActivityType.Listening
             }],
-            status: "idle"
+            status: 'idle'
         });
     }, 8000);
 
-    console.log("");
+    console.log('');
     console.log(
-        green("                                                     Leoner")
+        green('                                                     Leoner')
     );
-    console.log("");
-    console.log("");
+    console.log('');
+    console.log('');
     console.log(
         yellow(
-            "               + ================================Commands========================================== +"
+            '               + ================================Commands========================================== +'
         )
     );
     console.log(
@@ -58,17 +58,17 @@ module.exports.run = async () => {
     );
     console.log(
         yellow(
-            "               + ================================Info========================================== +"
+            '               + ================================Info========================================== +'
         )
     );
     console.log(
         cyan(
-            "                       Author   [i] :: By [Leoner#1604]     :: © 2022 Development                   "
+            '                       Author   [i] :: By [Leoner#1604]     :: © 2022 Development                   '
         )
     );
     console.log(
         cyan(
-            "                       Bot info [i] :: Status               :: ✅ Online                           "
+            '                       Bot info [i] :: Status               :: ✅ Online                           '
         )
     );
     console.log(
@@ -88,11 +88,11 @@ module.exports.run = async () => {
     );
     console.log(
         yellow(
-            "               + ================================================================================== +"
+            '               + ================================================================================== +'
         )
     );
 
-    console.log("");
+    console.log('');
 
-    console.log("Press [CTRL + C] to stop the Terminal ...");
+    console.log('Press [CTRL + C] to stop the Terminal ...');
 };
