@@ -25,7 +25,7 @@ class Ping extends Command {
         super(client, {
             name: 'ping',
             group: 'util',
-            description: 'Checks the bot\'s latency.',
+            description: "Checks the bot's latency.",
             permissions: {
                 client: [PermissionsBitField.Flags.SendMessages, PermissionsBitField.Flags.EmbedLinks],
             },

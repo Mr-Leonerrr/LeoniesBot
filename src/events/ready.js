@@ -35,64 +35,70 @@ module.exports.run = async () => {
         });
     }, 8000);
 
-    console.log('');
-    console.log(
-        green('                                                     Leoner')
-    );
-    console.log('');
-    console.log('');
-    console.log(
-        yellow(
-            '               + ================================Commands========================================== +'
-        )
-    );
-    console.log(
-        cyan(
-            `                                [i] :: ${client.config.prefix}help                :: Displays commands.                   `
-        )
-    );
-    console.log(
-        cyan(
-            `                                [i] :: ${client.config.prefix}ping                :: Displays bots ping.                  `
-        )
-    );
-    console.log(
-        yellow(
-            '               + ================================Info========================================== +'
-        )
-    );
-    console.log(
-        cyan(
-            '                       Author   [i] :: By [Leoner#1604]     :: © 2022 Development                   '
-        )
-    );
-    console.log(
-        cyan(
-            '                       Bot info [i] :: Status               :: ✅ Online                           '
-        )
-    );
-    console.log(
-        cyan(
-            `                       Users    [i] ::                      :: ${client.users.cache.size}  Users   `
-        )
-    );
-    console.log(
-        cyan(
-            `                       Guilds   [i] ::                      :: ${client.guilds.cache.size} Guilds  `
-        )
-    );
-    console.log(
-        cyan(
-            `                       Count    [i] ::                      :: ${client.commands.size} Commands  `
-        )
-    );
-    console.log(
-        yellow(
-            '               + ================================================================================== +'
-        )
-    );
+    if (process.env.ENV_TYPE === 'dev') {
+        console.log('');
+        console.log(
+            green('                                                     Leoner')
+        );
+        console.log('');
+        console.log('');
+        console.log(
+            yellow(
+                '               + ================================Commands========================================== +'
+            )
+        );
+        console.log(
+            cyan(
+                `                                [i] :: ${client.config.prefix}help                :: Displays commands.                   `
+            )
+        );
+        console.log(
+            cyan(
+                `                                [i] :: ${client.config.prefix}ping                :: Displays bots ping.                  `
+            )
+        );
+        console.log(
+            yellow(
+                '               + ================================Info========================================== +'
+            )
+        );
+        console.log(
+            cyan(
+                '                       Author   [i] :: By [Leoner#1604]     :: © 2022 Development                   '
+            )
+        );
+        console.log(
+            cyan(
+                '                       Bot info [i] :: Status               :: ✅ Online                           '
+            )
+        );
+        console.log(
+            cyan(
+                `                       Users    [i] ::                      :: ${client.users.cache.size}  Users   `
+            )
+        );
+        console.log(
+            cyan(
+                `                       Guilds   [i] ::                      :: ${client.guilds.cache.size} Guilds  `
+            )
+        );
+        console.log(
+            cyan(
+                `                       Count    [i] ::                      :: ${client.commands.size} Commands  `
+            )
+        );
+        console.log(
+            yellow(
+                '               + ================================================================================== +'
+            )
+        );
+
+        console.log('');
+
+        console.log('Press [CTRL + C] to stop the Terminal ...');
+    }
 
     console.log('');
 
-    console.log('Press [CTRL + C] to stop the Terminal ...');
+    console.log('Client [i] :: Bot is ready!');
 };
